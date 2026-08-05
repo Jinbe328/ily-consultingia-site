@@ -1,0 +1,21 @@
+# --- Secrets et environnement (au cas où, routine sécurité) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+token.json
+secrets/
+
+# --- Fichiers système ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Éditeurs / IDE ---
+.vscode/
+.idea/
+
+# --- Notes internes : jamais servies publiquement ---
+BRIEF_SITE.md
