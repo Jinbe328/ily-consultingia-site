@@ -150,14 +150,10 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); color: var(--text-primary
   font-size: 1.05rem;
 }
 .logo-mark {
-  display: grid;
-  place-items: center;
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: var(--accent-primary);
-  color: #fff;
-  font-weight: 800;
+  flex-shrink: 0;
 }
 .logo-accent { color: var(--accent-bright); }
 
@@ -481,7 +477,6 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); color: var(--text-primary
 .footer-col a:hover { color: #fff; }
 .footer-soon { opacity: 0.55; }
 .footer-brand .logo { color: #fff; }
-.footer-brand .logo-mark { background: rgba(255,255,255,0.12); }
 .footer-brand p { font-size: 0.9rem; max-width: 32ch; opacity: 0.75; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.12);
