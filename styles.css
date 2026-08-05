@@ -21,7 +21,6 @@
 
 /* ===== Reset ===== */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
@@ -51,10 +50,21 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); color: var(--text-primary
 /* ===== Reveal-on-scroll ===== */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transform: translateY(28px) scale(0.98);
+  filter: blur(6px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease), filter 0.8s var(--ease);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+
+/* Stagger : les enfants d'une même grille se révèlent en cascade */
+.service-cards .reveal:nth-child(1), .methode-steps .reveal:nth-child(1) { transition-delay: 0s; }
+.service-cards .reveal:nth-child(2), .methode-steps .reveal:nth-child(2) { transition-delay: 0.08s; }
+.service-cards .reveal:nth-child(3), .methode-steps .reveal:nth-child(3) { transition-delay: 0.16s; }
+.service-cards .reveal:nth-child(4), .methode-steps .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+}
 
 /* ===== Buttons ===== */
 .btn {
@@ -241,7 +251,7 @@ h1, h2, h3, h4, h5 { font-family: var(--font-display); color: var(--text-primary
   margin-bottom: 2rem;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-.hero-visual { display: flex; justify-content: center; }
+.hero-visual { display: flex; justify-content: center; will-change: transform; }
 .hero-svg { width: 100%; max-width: 400px; }
 .hero-nodes circle { animation: pulse 3s ease-in-out infinite; }
 .hero-nodes circle:nth-child(2) { animation-delay: 0.3s; }
