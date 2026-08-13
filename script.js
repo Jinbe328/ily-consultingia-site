@@ -193,19 +193,18 @@
     return localStorage.getItem(STORAGE_KEY) || 'fr';
   }
 
-  function splitHeroTitle(text) {
-    var heroTitleEl = document.querySelector('[data-i18n-split="hero.title"]');
-    if (!heroTitleEl) return;
-    heroTitleEl.innerHTML = '';
+  function splitIntoWords(el, text) {
+    if (!el) return;
+    el.innerHTML = '';
     var words = text.split(' ');
     words.forEach(function (word, i) {
       var span = document.createElement('span');
       span.className = 'word';
       span.style.animationDelay = (0.15 + i * 0.06) + 's';
       span.textContent = word;
-      heroTitleEl.appendChild(span);
+      el.appendChild(span);
       if (i < words.length - 1) {
-        heroTitleEl.appendChild(document.createTextNode(' '));
+        el.appendChild(document.createTextNode(' '));
       }
     });
   }
@@ -219,9 +218,11 @@
       if (dict[key]) el.textContent = dict[key];
     });
 
-    var splitKey = 'hero.title';
-    var splitText = dict[splitKey];
-    if (splitText) splitHeroTitle(splitText);
+    document.querySelectorAll('[data-i18n-split]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-split');
+      var text = dict[key];
+      if (text) splitIntoWords(el, text);
+    });
 
     document.querySelectorAll('.lang-option').forEach(function (el) {
       el.classList.toggle('is-active', el.getAttribute('data-lang') === lang);
@@ -262,7 +263,7 @@
 
   /* ===== Reveal on scroll ===== */
   function initReveal() {
-    var els = document.querySelectorAll('.reveal');
+    var els = document.querySelectorAll('.reveal, .heading-split');
     if (!('IntersectionObserver' in window)) {
       els.forEach(function (el) { el.classList.add('is-visible'); });
       return;
@@ -275,6 +276,13 @@
         }
       });
     }, { threshold: 0.15 });
+
+    // Set --stagger-i custom property on grid children for .reveal elements
+    document.querySelectorAll('.service-cards .reveal, .service-cards-3 .reveal, .methode-steps .reveal').forEach(function (el) {
+      var index = Array.from(el.parentNode.children).indexOf(el);
+      el.style.setProperty('--stagger-i', index);
+    });
+
     els.forEach(function (el) { observer.observe(el); });
   }
 
@@ -307,10 +315,12 @@
         var rect = btn.getBoundingClientRect();
         var x = e.clientX - rect.left - rect.width / 2;
         var y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = 'translate(' + (x * 0.12) + 'px, ' + (y * 0.25) + 'px)';
+        btn.style.setProperty('--magnet-x', (x * 0.12) + 'px');
+        btn.style.setProperty('--magnet-y', (y * 0.25) + 'px');
       });
       btn.addEventListener('mouseleave', function () {
-        btn.style.transform = '';
+        btn.style.removeProperty('--magnet-x');
+        btn.style.removeProperty('--magnet-y');
       });
     });
   }
