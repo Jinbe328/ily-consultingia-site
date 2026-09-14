@@ -3,13 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ily Consulting IA — L'IA appliquée aux vrais problèmes de votre entreprise</title>
-<meta name="description" content="Conseil, développement et formation en IA pour PME et ETI en Algérie, au Maghreb et en Europe. Basé à Oran.">
+<title>Ily Consulting — Business × Data × IA</title>
+<meta name="description" content="Consulting IA pour PME : diagnostic IA, automatisation des processus, data analytics et Power BI. Nous identifions les tâches qui vous font perdre du temps et les automatisons uniquement quand cela apporte une vraie valeur.">
+<meta name="theme-color" content="#0A0F0D">
+<link rel="canonical" href="https://ily-consultingia.com/">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Ily Consulting">
+<meta property="og:url" content="https://ily-consultingia.com/">
+<meta property="og:title" content="Ily Consulting — Business × Data × IA">
+<meta property="og:description" content="L'IA doit vous faire gagner du temps. Pas vous donner plus de travail. Diagnostic IA, automatisation et data analytics pour PME.">
+<meta property="og:image" content="https://ily-consultingia.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ily Consulting — Business × Data × IA">
+<meta name="twitter:description" content="Diagnostic IA, automatisation et data analytics pour PME. Nous commençons par votre problème, pas par l'outil.">
+<meta name="twitter:image" content="https://ily-consultingia.com/assets/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ily Consulting",
+  "alternateName": "Ily Consulting IA",
+  "url": "https://ily-consultingia.com/",
+  "email": "islem@ily-consultingia.com",
+  "telephone": "+213557169621",
+  "description": "Consulting IA pour PME : diagnostic IA, automatisation des processus, data analytics.",
+  "founder": { "@type": "Person", "name": "Sekouane Islam Imad eddine" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Oran", "addressCountry": "DZ" },
+  "areaServed": ["DZ", "MA", "TN", "FR", "ES"],
+  "knowsAbout": ["Consulting IA", "Automatisation IA", "IA pour PME", "Data analytics", "Power BI", "Automatisation des processus"]
+}
+</script>
 </head>
 <body>
 
@@ -17,31 +51,42 @@
 
 <header class="site-header" id="site-header">
   <div class="container header-inner">
-    <a href="#" class="logo" aria-label="Ily Consulting IA — accueil">
-      <img src="assets/favicon.svg" class="logo-mark" alt="">
-      <span class="logo-text">Ily <span class="logo-accent">Consulting IA</span></span>
+    <a href="#hero" class="logo" aria-label="Ily Consulting, accueil">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect width="40" height="40" rx="11" fill="#0A0F0D"/>
+        <rect x="16.8" y="16" width="6.4" height="16" rx="3.2" fill="#F4F3EC"/>
+        <circle cx="20" cy="9.5" r="3.4" fill="#59FF4A"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-name">ily <strong>Consulting</strong></span>
+        <span class="logo-tag">Business × Data × IA</span>
+      </span>
     </a>
 
-    <nav class="main-nav" id="main-nav">
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#hero" data-i18n="nav.home">Accueil</a>
       <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#methode" data-i18n="nav.methode">Méthode</a>
-      <a href="#apropos" data-i18n="nav.apropos">À propos</a>
+      <a href="#methode" data-i18n="nav.method">Méthode</a>
+      <a href="#cas-pratique" data-i18n="nav.case">Cas pratiques</a>
+      <a href="#apropos" data-i18n="nav.about">À propos</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta-mobile">
+        <span data-i18n="cta.main">Obtenir mon diagnostic IA</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </a>
     </nav>
 
     <div class="header-actions">
-      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Changer de langue">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Changer de langue / Switch language">
         <span class="lang-option is-active" data-lang="fr">FR</span>
-        <span class="lang-sep">/</span>
+        <span class="lang-sep" aria-hidden="true">/</span>
         <span class="lang-option" data-lang="en">EN</span>
       </button>
-      <a href="#contact" class="btn btn-primary btn-sm btn-arrow">
-        <span data-i18n="nav.cta">Échangeons sur votre projet</span>
-        <span class="btn-arrow-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta">
+        <span data-i18n="cta.main">Obtenir mon diagnostic IA</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
       </a>
-      <button class="nav-burger" id="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -50,306 +95,491 @@
 
 <main id="main">
 
-  <!-- Hero -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-inner">
       <div class="hero-content">
-        <p class="eyebrow reveal" data-i18n="hero.eyebrow">Consultant IA — Oran, Algérie</p>
-        <h1 class="hero-title" data-i18n-split="hero.title">L'IA appliquée aux vrais problèmes de votre entreprise</h1>
-        <p class="hero-subtitle reveal" data-i18n="hero.subtitle">Stratégie, développement et formation. Pour PME et ETI en Algérie, au Maghreb et en Europe.</p>
-        <div class="hero-actions reveal">
-          <a href="#contact" class="btn btn-primary btn-lg magnetic" data-i18n="hero.ctaPrimary">Réservez un échange gratuit</a>
-          <a href="#services" class="btn btn-ghost btn-lg magnetic" data-i18n="hero.ctaSecondary">Découvrir nos services</a>
+        <p class="label label-light hero-anim" style="--d:0" data-i18n="hero.label">Business × Data × IA</p>
+        <h1 class="hero-title">
+          <span class="hero-anim" style="--d:1" data-i18n="hero.t1">L'IA doit vous faire gagner du temps.</span>
+          <span class="hero-title-accent hero-anim" style="--d:2" data-i18n="hero.t2">Pas vous donner plus de travail.</span>
+        </h1>
+        <p class="hero-subtitle hero-anim" style="--d:3" data-i18n="hero.sub">Ily Consulting aide les PME à identifier, automatiser et mesurer les processus qui peuvent réellement être améliorés grâce à l'intelligence artificielle.</p>
+
+        <ol class="value-chain hero-anim" style="--d:4" aria-label="Chaîne de valeur">
+          <li data-i18n="chain.1">Diagnostic IA</li>
+          <li data-i18n="chain.2">Automatisation</li>
+          <li data-i18n="chain.3">Data</li>
+          <li data-i18n="chain.4">Pilotage</li>
+        </ol>
+
+        <div class="hero-actions hero-anim" style="--d:5">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            <span data-i18n="cta.main">Obtenir mon diagnostic IA</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#methode" class="btn btn-outline-light btn-lg">
+            <span data-i18n="cta.how">Voir comment ça fonctionne</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
-          <circle cx="200" cy="200" r="150" stroke="#E2E8F0" stroke-width="1"/>
-          <circle cx="200" cy="200" r="100" stroke="#E2E8F0" stroke-width="1"/>
-          <g class="hero-nodes">
-            <circle cx="200" cy="60" r="6" fill="#2563EB"/>
-            <circle cx="340" cy="150" r="5" fill="#1E3A8A"/>
-            <circle cx="320" cy="310" r="7" fill="#2563EB"/>
-            <circle cx="140" cy="340" r="5" fill="#1E3A8A"/>
-            <circle cx="60" cy="230" r="6" fill="#2563EB"/>
-            <circle cx="80" cy="90" r="5" fill="#1E3A8A"/>
-            <circle cx="200" cy="200" r="9" fill="#0A1F3D"/>
-            <line x1="200" y1="200" x2="200" y2="60" stroke="#94A3B8" stroke-width="1"/>
-            <line x1="200" y1="200" x2="340" y2="150" stroke="#94A3B8" stroke-width="1"/>
-            <line x1="200" y1="200" x2="320" y2="310" stroke="#94A3B8" stroke-width="1"/>
-            <line x1="200" y1="200" x2="140" y2="340" stroke="#94A3B8" stroke-width="1"/>
-            <line x1="200" y1="200" x2="60" y2="230" stroke="#94A3B8" stroke-width="1"/>
-            <line x1="200" y1="200" x2="80" y2="90" stroke="#94A3B8" stroke-width="1"/>
-          </g>
-        </svg>
+
+      <div class="hero-visual hero-anim" style="--d:3">
+        <img class="hero-photo" src="assets/hero.jpg" width="880" height="1100" alt="Consultant travaillant sur un ordinateur portable dans un espace de travail moderne" fetchpriority="high" decoding="async">
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel-head">
+            <span class="hero-panel-dot"></span>
+            <span data-i18n="panel.title">Cartographie des processus</span>
+            <span class="hero-panel-tag" data-i18n="panel.tag">Diagnostic IA</span>
+          </div>
+          <ul class="hero-panel-list">
+            <li>
+              <span class="hp-name" data-i18n="panel.r1">Reporting hebdomadaire</span>
+              <span class="hp-status is-auto" data-i18n="panel.s1">Automatisable</span>
+            </li>
+            <li>
+              <span class="hp-name" data-i18n="panel.r2">Saisie des commandes</span>
+              <span class="hp-status is-auto" data-i18n="panel.s1">Automatisable</span>
+            </li>
+            <li>
+              <span class="hp-name" data-i18n="panel.r3">Relance des prospects</span>
+              <span class="hp-status is-partial" data-i18n="panel.s2">Partiellement</span>
+            </li>
+            <li>
+              <span class="hp-name" data-i18n="panel.r4">Validation des contrats</span>
+              <span class="hp-status is-manual" data-i18n="panel.s3">Reste manuel</span>
+            </li>
+          </ul>
+          <div class="hero-panel-chain">
+            <span data-i18n="chain.1">Diagnostic IA</span>
+            <span class="hpc-arrow"></span>
+            <span data-i18n="chain.2">Automatisation</span>
+            <span class="hpc-arrow"></span>
+            <span data-i18n="chain.3">Data</span>
+            <span class="hpc-arrow"></span>
+            <span data-i18n="chain.4">Pilotage</span>
+          </div>
+        </div>
+        <div class="hero-float" aria-hidden="true">
+          <span class="hero-float-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+          </span>
+          <p>
+            <span data-i18n="float.1">Moins de tâches répétitives.</span><br>
+            <strong data-i18n="float.2">Plus de temps pour l'essentiel.</strong>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust bar -->
-  <section class="trust-bar reveal">
-    <div class="container trust-inner">
-      <p class="trust-text" data-i18n="trust.text">Basé à Oran, accompagnement d'entreprises en Algérie, au Maghreb et en Europe</p>
-    </div>
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-        <span data-i18n="trust.placeholder">Clients de confiance à venir</span>
-        <span aria-hidden="true">·</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="services" id="services">
+  <!-- ===== PROBLÈMES ===== -->
+  <section class="problems section" id="problemes">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="services.eyebrow">Ce qu'on fait</span>
-        <h2 class="heading-split" data-i18n-split="services.title">Nos services</h2>
-        <p class="section-lead" data-i18n="services.lead">Deux façons de travailler ensemble, selon là où vous en êtes avec l'IA.</p>
+        <h2 data-i18n="pb.title">Combien de temps votre entreprise perd-elle sur des tâches qui pourraient être automatisées ?</h2>
+        <p class="section-lead" data-i18n="pb.lead">Ces tâches ne doivent pas forcément être supprimées. Elles doivent être analysées pour déterminer lesquelles peuvent être automatisées sans dégrader la qualité.</p>
       </div>
 
-      <div class="service-block reveal">
-        <h3 class="service-block-title" data-i18n="services.conseil.title">Conseil</h3>
-        <div class="service-cards">
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
-            </div>
-            <h4 data-i18n="services.conseil.card1.title">Audit et diagnostic IA</h4>
-            <p data-i18n="services.conseil.card1.desc">Analyse de votre maturité digitale et identification des opportunités concrètes d'automatisation.</p>
-          </article>
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 9l-5 3 5 3M16 9l5 3-5 3M13 5l-2 14" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h4 data-i18n="services.conseil.card2.title">Développement sur mesure</h4>
-            <p data-i18n="services.conseil.card2.desc">Agents IA et automatisations spécifiques, conçus pour vos process réels, pas des templates génériques.</p>
-          </article>
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16M9 15l3-4 3 2 4-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h4 data-i18n="services.conseil.card3.title">Accompagnement stratégique</h4>
-            <p data-i18n="services.conseil.card3.desc">Une feuille de route à 3-6 mois et un accompagnement dans la conduite du changement.</p>
-          </article>
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="4" height="10" rx="1"/><rect x="10" y="5" width="4" height="15" rx="1"/><rect x="16" y="13" width="4" height="7" rx="1"/></svg>
-            </div>
-            <h4 data-i18n="services.conseil.card4.title">Data & Analytics</h4>
-            <p data-i18n="services.conseil.card4.desc">Dashboards IA et reporting décisionnel pour piloter votre activité avec des données fiables.</p>
-          </article>
-        </div>
-      </div>
-
-      <div class="service-block reveal">
-        <h3 class="service-block-title" data-i18n="services.formation.title">Formation</h3>
-        <div class="service-cards service-cards-3">
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4l9 4-9 4-9-4 9-4z"/><path d="M3 12l9 4 9-4M3 16l9 4 9-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h4 data-i18n="services.formation.card1.title">Initiation</h4>
-            <p data-i18n="services.formation.card1.desc">Vos équipes découvrent l'IA générative (Claude, ChatGPT) et ses premiers usages concrets.</p>
-          </article>
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h7l-1 8 11-14h-8l1-6z" stroke-linejoin="round"/></svg>
-            </div>
-            <h4 data-i18n="services.formation.card2.title">Avancé</h4>
-            <p data-i18n="services.formation.card2.desc">Prompting expert et workflows automatisés pour utilisateurs déjà à l'aise avec l'IA.</p>
-          </article>
-          <article class="card service-card reveal">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke-linecap="round"/></svg>
-            </div>
-            <h4 data-i18n="services.formation.card3.title">Dirigeants</h4>
-            <p data-i18n="services.formation.card3.desc">Comprendre les enjeux stratégiques de l'IA pour la prise de décision, en conférence dédiée.</p>
-          </article>
-        </div>
-      </div>
+      <ul class="problem-grid stagger">
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><rect x="6" y="11" width="3" height="6" rx="0.8"/><rect x="11" y="7" width="3" height="10" rx="0.8"/><rect x="16" y="4" width="3" height="13" rx="0.8"/></svg></span>
+          <h3 data-i18n="pb.1">Reporting manuel</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"/></svg></span>
+          <h3 data-i18n="pb.2">Saisie répétitive de données</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+          <h3 data-i18n="pb.3">Traitement de documents</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6.2 4.5 2 4.5 4.8"/></svg></span>
+          <h3 data-i18n="pb.4">Suivi des prospects</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+          <h3 data-i18n="pb.5">Réponses répétitives</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M20 20l-4.8-4.8M8 10.5h5M10.5 8v5"/></svg></span>
+          <h3 data-i18n="pb.6">Extraction d'informations</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+          <h3 data-i18n="pb.7">Création de rapports</h3>
+        </li>
+        <li class="problem-card reveal">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5-8 4.5-8-4.5z"/><path d="M4 12l8 4.5 8-4.5M4 16.5L12 21l8-4.5"/></svg></span>
+          <h3 data-i18n="pb.8">Consolidation de données</h3>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- Méthode -->
-  <section class="methode" id="methode">
+  <!-- ===== SERVICES ===== -->
+  <section class="services section" id="services">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="methode.eyebrow">Comment on travaille</span>
-        <h2 class="heading-split" data-i18n-split="methode.title">Notre méthode</h2>
+        <p class="label" data-i18n="sv.label">Nos interventions principales</p>
+        <h2 data-i18n="sv.title">Des solutions concrètes pour votre entreprise</h2>
       </div>
-      <div class="methode-steps">
-        <div class="methode-step reveal">
-          <span class="methode-num">01</span>
-          <h3 data-i18n="methode.step1.title">Diagnostic</h3>
-          <p data-i18n="methode.step1.desc">On comprend votre business et vos douleurs réelles avant de parler solution.</p>
-        </div>
-        <div class="methode-step reveal">
-          <span class="methode-num">02</span>
-          <h3 data-i18n="methode.step2.title">Design</h3>
-          <p data-i18n="methode.step2.desc">On conçoit une solution IA taillée sur mesure pour votre contexte.</p>
-        </div>
-        <div class="methode-step reveal">
-          <span class="methode-num">03</span>
-          <h3 data-i18n="methode.step3.title">Build</h3>
-          <p data-i18n="methode.step3.desc">On développe, on teste, on itère avec vous à chaque étape.</p>
-        </div>
-        <div class="methode-step reveal">
-          <span class="methode-num">04</span>
-          <h3 data-i18n="methode.step4.title">Measure</h3>
-          <p data-i18n="methode.step4.desc">On mesure les résultats, on ajuste, on scale ce qui fonctionne.</p>
-        </div>
+
+      <div class="service-grid stagger">
+        <article class="service-card reveal">
+          <span class="service-num">01</span>
+          <h3 data-i18n="sv.1.title">Diagnostic IA</h3>
+          <p class="service-tagline" data-i18n="sv.1.tag">Identifier les opportunités avant d'investir.</p>
+          <ul class="service-list">
+            <li data-i18n="sv.1.a">Analyse des processus</li>
+            <li data-i18n="sv.1.b">Identification des tâches répétitives</li>
+            <li data-i18n="sv.1.c">Opportunités d'automatisation</li>
+            <li data-i18n="sv.1.d">Priorisation et estimation du potentiel</li>
+            <li data-i18n="sv.1.e">Roadmap</li>
+          </ul>
+          <a href="#contact" class="link-arrow">
+            <span data-i18n="sv.1.cta">Découvrir le diagnostic</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-num">02</span>
+          <h3 data-i18n="sv.2.title">Automatisation IA</h3>
+          <p class="service-tagline" data-i18n="sv.2.tag">Transformer une opportunité identifiée en solution opérationnelle.</p>
+          <ul class="service-list">
+            <li data-i18n="sv.2.a">Workflows automatisés</li>
+            <li data-i18n="sv.2.b">Traitement documentaire</li>
+            <li data-i18n="sv.2.c">Assistants IA</li>
+            <li data-i18n="sv.2.d">Automatisation CRM</li>
+            <li data-i18n="sv.2.e">Reporting automatisé</li>
+            <li data-i18n="sv.2.f">Intégration d'outils</li>
+          </ul>
+          <a href="#cas-pratique" class="link-arrow">
+            <span data-i18n="sv.2.cta">Voir les possibilités</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-num">03</span>
+          <h3 data-i18n="sv.3.title">Data &amp; Analytics</h3>
+          <p class="service-tagline" data-i18n="sv.3.tag">Transformer vos données en décisions.</p>
+          <ul class="service-list">
+            <li data-i18n="sv.3.a">Dashboards et KPI</li>
+            <li data-i18n="sv.3.b">Power BI</li>
+            <li data-i18n="sv.3.c">Reporting automatisé</li>
+            <li data-i18n="sv.3.d">Analyse commerciale</li>
+            <li data-i18n="sv.3.e">Prévisions et tendances</li>
+          </ul>
+          <a href="#contact" class="link-arrow">
+            <span data-i18n="sv.3.cta">Explorer Data &amp; Analytics</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- À propos -->
-  <section class="apropos" id="apropos">
-    <div class="container apropos-inner">
-      <div class="reveal">
-        <span class="eyebrow" data-i18n="apropos.eyebrow">Qui je suis</span>
-        <h2 class="heading-split" data-i18n-split="apropos.title">À propos d'Ily Consulting IA</h2>
-        <p data-i18n="apropos.p1">Fondé par Sekouane Islam Imad eddine, Ily Consulting IA accompagne des entreprises algériennes et européennes dans leurs projets d'intelligence artificielle appliquée.</p>
-        <p class="apropos-quote" data-i18n="apropos.vision">« Rendre l'IA accessible et utile pour les entreprises qui veulent des résultats mesurables, sans jargon ni promesses vides. »</p>
-        <ul class="apropos-values">
-          <li data-i18n="apropos.value1">Pragmatisme</li>
-          <li data-i18n="apropos.value2">Transparence</li>
-          <li data-i18n="apropos.value3">Résultats mesurables</li>
-        </ul>
-        <p class="apropos-location" data-i18n="apropos.location">Basé à Oran, j'accompagne des clients au Maghreb et en Europe.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
+  <!-- ===== CAS PRATIQUE ===== -->
+  <section class="case section" id="cas-pratique">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="faq.eyebrow">Questions fréquentes</span>
-        <h2 class="heading-split" data-i18n-split="faq.title">FAQ</h2>
+        <p class="label" data-i18n="cs.label">Cas pratique — démonstration</p>
+        <h2 data-i18n="cs.title">Un projet Ily Consulting, concrètement</h2>
+        <p class="section-lead" data-i18n="cs.lead">Exemple illustratif construit pour montrer la démarche. Il ne correspond pas à un client réel et n'affiche aucun résultat chiffré.</p>
+      </div>
+
+      <div class="case-grid">
+        <aside class="case-context reveal">
+          <span class="case-badge" data-i18n="cs.badge">Cas pratique — démonstration</span>
+          <p class="case-sector" data-i18n="cs.sector">Laboratoire / PME du secteur santé</p>
+          <h3 data-i18n="cs.sit">Situation de départ</h3>
+          <ul class="check-list">
+            <li data-i18n="cs.s1">Plusieurs produits</li>
+            <li data-i18n="cs.s2">Données commerciales dispersées</li>
+            <li data-i18n="cs.s3">Absence de CRM structuré</li>
+            <li data-i18n="cs.s4">Reporting manuel</li>
+            <li data-i18n="cs.s5">Faible visibilité sur les performances</li>
+          </ul>
+        </aside>
+
+        <ol class="case-path stagger">
+          <li class="case-step reveal">
+            <span class="step-num">01</span>
+            <div>
+              <h3 data-i18n="cs.p1.t">Analyse</h3>
+              <p data-i18n="cs.p1.d">Cartographie des processus et identification des tâches répétitives.</p>
+            </div>
+          </li>
+          <li class="case-step reveal">
+            <span class="step-num">02</span>
+            <div>
+              <h3 data-i18n="cs.p2.t">Solution</h3>
+              <p data-i18n="cs.p2.d">CRM structuré, automatisation du reporting, dashboard commercial et assistant IA interne.</p>
+            </div>
+          </li>
+          <li class="case-step reveal">
+            <span class="step-num">03</span>
+            <div>
+              <h3 data-i18n="cs.p3.t">Objectifs mesurables</h3>
+              <ul class="check-list compact">
+                <li data-i18n="cs.o1">Réduire le temps consacré au reporting</li>
+                <li data-i18n="cs.o2">Améliorer la visibilité commerciale</li>
+                <li data-i18n="cs.o3">Centraliser les données</li>
+                <li data-i18n="cs.o4">Accélérer certaines tâches</li>
+                <li data-i18n="cs.o5">Améliorer le suivi des prospects</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MÉTHODE ===== -->
+  <section class="method section section-dark" id="methode">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label-light" data-i18n="mt.label">Méthode</p>
+        <h2 data-i18n="mt.title">Une approche structurée et pragmatique</h2>
+      </div>
+
+      <ol class="method-steps stagger">
+        <li class="method-step reveal">
+          <span class="method-num">01</span>
+          <h3 data-i18n="mt.1.t">Comprendre</h3>
+          <p data-i18n="mt.1.d">Nous analysons votre activité et vos processus.</p>
+        </li>
+        <li class="method-step reveal">
+          <span class="method-num">02</span>
+          <h3 data-i18n="mt.2.t">Identifier</h3>
+          <p data-i18n="mt.2.d">Nous cherchons les tâches où l'IA peut réellement apporter de la valeur.</p>
+        </li>
+        <li class="method-step reveal">
+          <span class="method-num">03</span>
+          <h3 data-i18n="mt.3.t">Prioriser</h3>
+          <p data-i18n="mt.3.d">Nous classons les opportunités selon impact, coût, complexité et faisabilité.</p>
+        </li>
+        <li class="method-step reveal">
+          <span class="method-num">04</span>
+          <h3 data-i18n="mt.4.t">Construire</h3>
+          <p data-i18n="mt.4.d">Nous développons ou intégrons la solution adaptée.</p>
+        </li>
+        <li class="method-step reveal">
+          <span class="method-num">05</span>
+          <h3 data-i18n="mt.5.t">Mesurer</h3>
+          <p data-i18n="mt.5.d">Nous suivons les indicateurs permettant d'évaluer le résultat.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI ===== -->
+  <section class="why section" id="pourquoi">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label" data-i18n="wh.label">Pourquoi Ily Consulting</p>
+        <h2 data-i18n="wh.title">Une approche orientée business</h2>
+      </div>
+      <div class="why-grid stagger">
+        <article class="why-card reveal">
+          <span class="why-tag">Business</span>
+          <p data-i18n="wh.1">Comprendre le problème avant de choisir l'outil.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-tag">Data</span>
+          <p data-i18n="wh.2">Mesurer les performances et exploiter les données disponibles.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-tag">IA</span>
+          <p data-i18n="wh.3">Automatiser uniquement lorsque cela apporte une vraie valeur.</p>
+        </article>
+        <article class="why-card reveal">
+          <span class="why-tag" data-i18n="wh.4.tag">Mesure</span>
+          <p data-i18n="wh.4">Définir des indicateurs pour évaluer le résultat.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section class="about section" id="apropos">
+    <div class="container about-inner">
+      <div class="about-text reveal">
+        <p class="label" data-i18n="ab.label">À propos</p>
+        <h2>
+          <span data-i18n="ab.t1">Je ne commence pas par la technologie.</span><br>
+          <span class="text-muted" data-i18n="ab.t2">Je commence par votre problème business.</span>
+        </h2>
+        <p data-i18n="ab.p1">L'expérience commerciale m'a appris une chose : une technologie n'a aucune valeur si elle ne résout pas un problème concret.</p>
+        <p data-i18n="ab.p2">Ily Consulting combine compréhension des processus métier, data et intelligence artificielle pour construire des solutions réellement utiles aux entreprises.</p>
+
+        <button class="link-arrow link-toggle" type="button" id="bio-toggle" aria-expanded="false" aria-controls="bio-more">
+          <span data-i18n="ab.cta">En savoir plus sur mon parcours</span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <div class="bio-more" id="bio-more" hidden>
+          <p data-i18n="ab.bio1">Commercial terrain dans le secteur pharmaceutique, j'ai construit mes premiers outils IA pour résoudre mes propres problèmes : suivi de portefeuille, reporting, saisie des commandes.</p>
+          <p data-i18n="ab.bio2">C'est cette expérience côté utilisateur, sur le terrain, qui guide chaque projet Ily Consulting : partir du travail réel, pas de l'outil.</p>
+        </div>
+      </div>
+
+      <div class="about-card reveal">
+        <div class="portrait">
+          <img src="assets/portrait.jpg" width="800" height="1000" alt="Sekouane Islam Imad eddine, fondateur d'Ily Consulting" loading="lazy" decoding="async">
+        </div>
+        <div class="about-card-body">
+          <p class="about-name">Sekouane Islam Imad eddine</p>
+          <p class="about-role" data-i18n="ab.role">Fondateur, Ily Consulting</p>
+          <p class="about-loc" data-i18n="ab.loc">Oran, Algérie</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq section" id="faq">
+    <div class="container faq-inner">
+      <div class="section-head reveal">
+        <p class="label" data-i18n="fq.label">FAQ</p>
+        <h2 data-i18n="fq.title">Vos questions, nos réponses</h2>
       </div>
       <div class="faq-list reveal">
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q1">Quels types d'entreprises accompagnez-vous ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a1">Des PME et ETI en Algérie, au Maghreb et en Europe francophone, tous secteurs confondus, dès lors qu'il y a un vrai process à automatiser ou à outiller.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span data-i18n="fq.q1">Combien de temps dure un diagnostic IA ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <p data-i18n="fq.a1">Cela dépend de la taille de l'entreprise et du nombre de processus à analyser. Il commence toujours par un échange de 30 minutes, puis une phase d'observation de vos processus, et se conclut par une roadmap priorisée. La durée exacte est fixée ensemble dès le premier échange.</p>
           </div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q2">Quel est un engagement type ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a2">Ça commence toujours par un échange gratuit de 30 minutes pour cadrer le besoin, puis un audit court avant de démarrer un projet. Durée et livrables varient selon le périmètre, définis ensemble dès le départ.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span data-i18n="fq.q2">Est-ce que vous travaillez avec des PME uniquement ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <p data-i18n="fq.a2">Les PME sont notre cœur de cible, mais la méthode s'applique à toute structure qui a des processus répétitifs à analyser : cabinets, professions libérales, équipes commerciales ou administratives d'entreprises plus grandes.</p>
           </div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q3">Combien coûte un projet ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a3">Ça dépend entièrement du périmètre. Pas de catalogue de prix figé à ce stade : on en discute lors de l'échange initial, une fois le besoin clair.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span data-i18n="fq.q3">Quels outils utilisez-vous ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <p data-i18n="fq.a3">Ceux qui correspondent au besoin : modèles d'IA (Claude, GPT), outils d'automatisation (n8n), Power BI pour la data, et vos outils existants (Google Workspace, Excel, CRM, WhatsApp). L'outil est choisi après le diagnostic, jamais avant.</p>
           </div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q4">Où sont stockées les données ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a4">La souveraineté des données est prise au sérieux, en conformité avec la loi 25-11 algérienne sur la protection des données personnelles. L'hébergement est discuté selon le projet et vos contraintes.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span data-i18n="fq.q4">Comment se déroule un projet ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <p data-i18n="fq.a4">En cinq étapes : comprendre, identifier, prioriser, construire, mesurer. Nous avançons par itérations courtes avec des points réguliers, pour que vous voyiez la solution évoluer plutôt que d'attendre une livraison finale.</p>
           </div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q5">Comment se déroule un projet du début à la fin ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a5">Diagnostic, design, build, measure : on avance par itérations courtes, avec des points réguliers, plutôt qu'une livraison unique à la fin.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              <span data-i18n="fq.q5">Est-ce que la formation est incluse ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <p data-i18n="fq.a5">Oui. Chaque solution livrée s'accompagne d'une prise en main des équipes qui l'utilisent. Une solution que personne n'utilise n'a aucune valeur, la formation fait donc partie du projet.</p>
           </div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span data-i18n="faq.q6">Travaillez-vous avec des entreprises hors d'Algérie ?</span>
-            <span class="faq-chevron" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p data-i18n="faq.a6">Oui, notamment au Maghreb et en Europe francophone. Les échanges et le travail se font à distance, avec des déplacements possibles selon le projet.</p>
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              <span data-i18n="fq.q6">Est-ce que l'IA peut être intégrée à mes outils actuels ?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <p data-i18n="fq.a6">Dans la grande majorité des cas, oui. L'objectif est de s'intégrer à vos outils existants (messagerie, tableurs, CRM, logiciels métier) plutôt que de les remplacer. Le diagnostic vérifie précisément ce point avant tout développement.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA final / Contact -->
-  <section class="cta-final" id="contact">
+  <!-- ===== CTA FINAL / CONTACT ===== -->
+  <section class="cta section section-dark" id="contact">
+    <svg class="cta-lines" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M-50 480 C 250 380, 450 560, 700 420 S 1100 300, 1300 380" />
+      <path d="M-50 540 C 300 460, 500 620, 800 470 S 1150 360, 1300 440" />
+      <path d="M-50 120 C 200 60, 400 200, 650 90 S 1000 -20, 1300 80" />
+    </svg>
     <div class="container cta-inner">
-      <div class="section-head reveal">
-        <h2 class="heading-split" data-i18n-split="cta.title">Prêt à passer de la théorie aux résultats ?</h2>
-        <p class="section-lead" data-i18n="cta.subtitle">Discutons de votre projet lors d'un échange gratuit de 30 minutes.</p>
-      </div>
+      <div class="cta-text reveal">
+        <h2 data-i18n="ct.title">Parlons de votre projet.</h2>
+        <p class="cta-lead" data-i18n="ct.lead">30 minutes. Aucun engagement. Je vous aide à identifier les opportunités d'automatisation dans votre entreprise.</p>
 
-      <div class="cta-grid reveal">
-        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mgawwbzy" method="POST">
-          <div class="form-row">
-            <label for="name" data-i18n="cta.form.name">Nom</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-row">
-            <label for="email" data-i18n="cta.form.email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-row">
-            <label for="company" data-i18n="cta.form.company">Entreprise</label>
-            <input type="text" id="company" name="company">
-          </div>
-          <div class="form-row">
-            <label for="message" data-i18n="cta.form.message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg magnetic" data-i18n="cta.form.submit">Envoyer ma demande</button>
-          <p class="form-note" data-i18n="cta.form.note">Réponse sous 24h ouvrées.</p>
-        </form>
-
-        <div class="cta-alt-channels">
-          <!-- TODO: activer une fois le numéro WhatsApp pro opérationnel (validation Meta en cours) -->
-          <button type="button" class="btn btn-outline btn-disabled" disabled title="Bientôt disponible">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z" opacity="0.85"/></svg>
-            <span data-i18n="cta.whatsapp">Écrire sur WhatsApp</span>
-            <span class="badge-soon" data-i18n="cta.soon">Bientôt disponible</span>
-          </button>
-
-          <!-- TODO: activer une fois Cal.com configuré (remplacer par un lien réel https://cal.com/...) -->
-          <button type="button" class="btn btn-outline btn-disabled" disabled title="Bientôt disponible">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-linecap="round"/></svg>
-            <span data-i18n="cta.calendar">Prendre RDV directement</span>
-            <span class="badge-soon" data-i18n="cta.soon">Bientôt disponible</span>
-          </button>
+        <div class="cta-channels">
+          <a class="channel" href="mailto:islem@ily-consultingia.com">
+            <span class="channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <span class="channel-body">
+              <span class="channel-label">Email</span>
+              <span class="channel-value">islem@ily-consultingia.com</span>
+            </span>
+          </a>
+          <a class="channel" href="https://wa.me/213557169621?text=Bonjour%2C%20je%20souhaite%20un%20diagnostic%20IA%20pour%20mon%20entreprise." target="_blank" rel="noopener">
+            <span class="channel-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9.2 9.4c.2-.6.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .4-.1.6l-.4.5c.4.8 1.2 1.6 2 2l.5-.4c.2-.2.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.6c0 .4-.3.8-.7.9-.8.2-2.6-.1-4.3-1.8S8.9 11 9 10.2c0-.3.1-.6.2-.8z"/></svg>
+            </span>
+            <span class="channel-body">
+              <span class="channel-label">WhatsApp</span>
+              <span class="channel-value" data-i18n="ct.wa">Écrire directement</span>
+            </span>
+          </a>
         </div>
       </div>
+
+      <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/mgawwbzy" method="POST" novalidate>
+        <div class="form-grid">
+          <div class="form-row">
+            <label for="name" data-i18n="ct.f.name">Nom</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email" data-i18n="ct.f.email">Email professionnel</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="company" data-i18n="ct.f.company">Entreprise</label>
+          <input type="text" id="company" name="company" autocomplete="organization">
+        </div>
+        <div class="form-row">
+          <label for="message" data-i18n="ct.f.message">Quelles tâches vous prennent le plus de temps aujourd'hui ?</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Demande de diagnostic IA (ily-consultingia.com)">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">
+          <span data-i18n="cta.main">Obtenir mon diagnostic IA</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="form-note" data-i18n="ct.f.note">Réponse sous 24h ouvrées. Vos informations ne sont jamais partagées.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -357,37 +587,43 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-col footer-brand">
-      <a href="#" class="logo">
-        <img src="assets/favicon.svg" class="logo-mark" alt="">
-        <span class="logo-text">Ily <span class="logo-accent">Consulting IA</span></span>
+    <div class="footer-brand">
+      <a href="#hero" class="logo logo-light" aria-label="Ily Consulting, retour en haut">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect width="40" height="40" rx="11" fill="#F4F3EC"/>
+          <rect x="16.8" y="16" width="6.4" height="16" rx="3.2" fill="#0A0F0D"/>
+          <circle cx="20" cy="9.5" r="3.4" fill="#59FF4A"/>
+        </svg>
+        <span class="logo-text">
+          <span class="logo-name">ily <strong>Consulting</strong></span>
+          <span class="logo-tag">Business × Data × IA</span>
+        </span>
       </a>
-      <p data-i18n="footer.tagline">L'IA appliquée aux vrais problèmes de votre entreprise.</p>
+      <p class="footer-desc" data-i18n="ft.desc">Diagnostic IA, automatisation et data analytics pour PME. Nous commençons par votre problème, pas par l'outil.</p>
     </div>
-    <div class="footer-col">
-      <h5 data-i18n="footer.nav">Navigation</h5>
+
+    <nav class="footer-nav" aria-label="Navigation pied de page">
+      <a href="#hero" data-i18n="nav.home">Accueil</a>
       <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#methode" data-i18n="nav.methode">Méthode</a>
-      <a href="#apropos" data-i18n="nav.apropos">À propos</a>
-    </div>
-    <div class="footer-col">
-      <h5 data-i18n="footer.contact">Contact</h5>
+      <a href="#methode" data-i18n="nav.method">Méthode</a>
+      <a href="#cas-pratique" data-i18n="nav.case">Cas pratiques</a>
+      <a href="#apropos" data-i18n="nav.about">À propos</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p class="footer-heading">Contact</p>
       <a href="mailto:islem@ily-consultingia.com">islem@ily-consultingia.com</a>
-      <span class="footer-soon" data-i18n="cta.soon">WhatsApp — bientôt disponible</span>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <div class="footer-col">
-      <h5 data-i18n="footer.resources">Ressources</h5>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <span class="footer-soon" data-i18n="footer.blogSoon">Blog — à venir</span>
+      <a href="https://wa.me/213557169621" target="_blank" rel="noopener">WhatsApp : +213 557 16 96 21</a>
+      <p class="footer-loc" data-i18n="ft.loc">Oran, Algérie</p>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p data-i18n="footer.legal">Fondé par Sekouane Islam Imad eddine — Oran, Algérie — © 2026 Ily Consulting IA</p>
+  <div class="container footer-bottom">
+    <p data-i18n="ft.copy">© 2026 Ily Consulting. Tous droits réservés.</p>
+    <p data-i18n="ft.founder">Fondé par Sekouane Islam Imad eddine</p>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

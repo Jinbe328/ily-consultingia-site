@@ -1,269 +1,265 @@
 (function () {
   'use strict';
 
-  /* ===== Translations ===== */
-  var translations = {
-    fr: {
-      'nav.services': 'Services',
-      'nav.methode': 'Méthode',
-      'nav.apropos': 'À propos',
-      'nav.contact': 'Contact',
-      'nav.faq': 'FAQ',
-      'nav.cta': 'Échangeons sur votre projet',
+  /* =====================================================================
+     i18n : le français est la source de vérité dans le HTML.
+     Au chargement, on capture chaque texte [data-i18n] comme dictionnaire FR,
+     puis on applique l'anglais depuis le dictionnaire ci-dessous.
+     Une clé absente en EN retombe sur le FR.
+     ===================================================================== */
+  var STORAGE_KEY = 'ily-lang';
+  var fr = {};
+  var en = {
+    'nav.home': 'Home',
+    'nav.services': 'Services',
+    'nav.method': 'Method',
+    'nav.case': 'Case studies',
+    'nav.about': 'About',
+    'nav.contact': 'Contact',
+    'cta.main': 'Get my AI assessment',
+    'cta.how': 'See how it works',
 
-      'hero.eyebrow': 'Consultant IA — Oran, Algérie',
-      'hero.title': "L'IA appliquée aux vrais problèmes de votre entreprise",
-      'hero.subtitle': 'Stratégie, développement et formation. Pour PME et ETI en Algérie, au Maghreb et en Europe.',
-      'hero.ctaPrimary': 'Réservez un échange gratuit',
-      'hero.ctaSecondary': 'Découvrir nos services',
+    'hero.label': 'Business × Data × AI',
+    'hero.t1': 'AI should save you time.',
+    'hero.t2': 'Not give you more work.',
+    'hero.sub': 'Ily Consulting helps SMEs identify, automate and measure the processes that can genuinely be improved with artificial intelligence.',
+    'chain.1': 'AI assessment',
+    'chain.2': 'Automation',
+    'chain.3': 'Data',
+    'chain.4': 'Steering',
+    'panel.title': 'Process mapping',
+    'panel.tag': 'AI assessment',
+    'panel.r1': 'Weekly reporting',
+    'panel.r2': 'Order entry',
+    'panel.r3': 'Lead follow-up',
+    'panel.r4': 'Contract approval',
+    'panel.s1': 'Automatable',
+    'panel.s2': 'Partially',
+    'panel.s3': 'Stays manual',
+    'float.1': 'Fewer repetitive tasks.',
+    'float.2': 'More time for what matters.',
 
-      'trust.text': 'Basé à Oran, accompagnement d’entreprises en Algérie, au Maghreb et en Europe',
-      'trust.placeholder': 'Clients de confiance à venir',
+    'pb.title': 'How much time does your company lose on tasks that could be automated?',
+    'pb.lead': 'These tasks don’t necessarily have to disappear. They need to be analysed to determine which ones can be automated without degrading quality.',
+    'pb.1': 'Manual reporting',
+    'pb.2': 'Repetitive data entry',
+    'pb.3': 'Document processing',
+    'pb.4': 'Lead tracking',
+    'pb.5': 'Repetitive replies',
+    'pb.6': 'Information extraction',
+    'pb.7': 'Report creation',
+    'pb.8': 'Data consolidation',
 
-      'services.eyebrow': 'Ce qu’on fait',
-      'services.title': 'Nos services',
-      'services.lead': 'Deux façons de travailler ensemble, selon là où vous en êtes avec l’IA.',
-      'services.conseil.title': 'Conseil',
-      'services.conseil.card1.title': 'Audit et diagnostic IA',
-      'services.conseil.card1.desc': 'Analyse de votre maturité digitale et identification des opportunités concrètes d’automatisation.',
-      'services.conseil.card2.title': 'Développement sur mesure',
-      'services.conseil.card2.desc': 'Agents IA et automatisations spécifiques, conçus pour vos process réels, pas des templates génériques.',
-      'services.conseil.card3.title': 'Accompagnement stratégique',
-      'services.conseil.card3.desc': 'Une feuille de route à 3-6 mois et un accompagnement dans la conduite du changement.',
-      'services.conseil.card4.title': 'Data & Analytics',
-      'services.conseil.card4.desc': 'Dashboards IA et reporting décisionnel pour piloter votre activité avec des données fiables.',
-      'services.formation.title': 'Formation',
-      'services.formation.card1.title': 'Initiation',
-      'services.formation.card1.desc': 'Vos équipes découvrent l’IA générative (Claude, ChatGPT) et ses premiers usages concrets.',
-      'services.formation.card2.title': 'Avancé',
-      'services.formation.card2.desc': 'Prompting expert et workflows automatisés pour utilisateurs déjà à l’aise avec l’IA.',
-      'services.formation.card3.title': 'Dirigeants',
-      'services.formation.card3.desc': 'Comprendre les enjeux stratégiques de l’IA pour la prise de décision, en conférence dédiée.',
+    'sv.label': 'Our core services',
+    'sv.title': 'Concrete solutions for your business',
+    'sv.1.title': 'AI Assessment',
+    'sv.1.tag': 'Identify the opportunities before investing.',
+    'sv.1.a': 'Process analysis',
+    'sv.1.b': 'Identification of repetitive tasks',
+    'sv.1.c': 'Automation opportunities',
+    'sv.1.d': 'Prioritisation and potential estimate',
+    'sv.1.e': 'Roadmap',
+    'sv.1.cta': 'Discover the assessment',
+    'sv.2.title': 'AI Automation',
+    'sv.2.tag': 'Turn an identified opportunity into an operational solution.',
+    'sv.2.a': 'Automated workflows',
+    'sv.2.b': 'Document processing',
+    'sv.2.c': 'AI assistants',
+    'sv.2.d': 'CRM automation',
+    'sv.2.e': 'Automated reporting',
+    'sv.2.f': 'Tool integration',
+    'sv.2.cta': 'See what’s possible',
+    'sv.3.title': 'Data & Analytics',
+    'sv.3.tag': 'Turn your data into decisions.',
+    'sv.3.a': 'Dashboards and KPIs',
+    'sv.3.b': 'Power BI',
+    'sv.3.c': 'Automated reporting',
+    'sv.3.d': 'Sales analysis',
+    'sv.3.e': 'Forecasts and trends',
+    'sv.3.cta': 'Explore Data & Analytics',
 
-      'methode.eyebrow': 'Comment on travaille',
-      'methode.title': 'Notre méthode',
-      'methode.step1.title': 'Diagnostic',
-      'methode.step1.desc': 'On comprend votre business et vos douleurs réelles avant de parler solution.',
-      'methode.step2.title': 'Design',
-      'methode.step2.desc': 'On conçoit une solution IA taillée sur mesure pour votre contexte.',
-      'methode.step3.title': 'Build',
-      'methode.step3.desc': 'On développe, on teste, on itère avec vous à chaque étape.',
-      'methode.step4.title': 'Measure',
-      'methode.step4.desc': 'On mesure les résultats, on ajuste, on scale ce qui fonctionne.',
+    'cs.label': 'Case study — demonstration',
+    'cs.title': 'An Ily Consulting project, concretely',
+    'cs.lead': 'An illustrative example built to show the approach. It does not correspond to a real client and shows no figures.',
+    'cs.badge': 'Case study — demonstration',
+    'cs.sector': 'Laboratory / healthcare SME',
+    'cs.sit': 'Starting point',
+    'cs.s1': 'Several products',
+    'cs.s2': 'Scattered sales data',
+    'cs.s3': 'No structured CRM',
+    'cs.s4': 'Manual reporting',
+    'cs.s5': 'Low visibility on performance',
+    'cs.p1.t': 'Analysis',
+    'cs.p1.d': 'Process mapping and identification of repetitive tasks.',
+    'cs.p2.t': 'Solution',
+    'cs.p2.d': 'Structured CRM, automated reporting, sales dashboard and internal AI assistant.',
+    'cs.p3.t': 'Measurable objectives',
+    'cs.o1': 'Reduce time spent on reporting',
+    'cs.o2': 'Improve sales visibility',
+    'cs.o3': 'Centralise data',
+    'cs.o4': 'Speed up specific tasks',
+    'cs.o5': 'Improve lead follow-up',
 
-      'apropos.eyebrow': 'Qui je suis',
-      'apropos.title': 'À propos d’Ily Consulting IA',
-      'apropos.p1': 'Fondé par Sekouane Islam Imad eddine, Ily Consulting IA accompagne des entreprises algériennes et européennes dans leurs projets d’intelligence artificielle appliquée.',
-      'apropos.vision': '« Rendre l’IA accessible et utile pour les entreprises qui veulent des résultats mesurables, sans jargon ni promesses vides. »',
-      'apropos.value1': 'Pragmatisme',
-      'apropos.value2': 'Transparence',
-      'apropos.value3': 'Résultats mesurables',
-      'apropos.location': 'Basé à Oran, j’accompagne des clients au Maghreb et en Europe.',
+    'mt.label': 'Method',
+    'mt.title': 'A structured, pragmatic approach',
+    'mt.1.t': 'Understand',
+    'mt.1.d': 'We analyse your business and your processes.',
+    'mt.2.t': 'Identify',
+    'mt.2.d': 'We look for the tasks where AI can genuinely add value.',
+    'mt.3.t': 'Prioritise',
+    'mt.3.d': 'We rank opportunities by impact, cost, complexity and feasibility.',
+    'mt.4.t': 'Build',
+    'mt.4.d': 'We develop or integrate the right solution.',
+    'mt.5.t': 'Measure',
+    'mt.5.d': 'We track the indicators that show whether it worked.',
 
-      'faq.eyebrow': 'Questions fréquentes',
-      'faq.title': 'FAQ',
-      'faq.q1': 'Quels types d’entreprises accompagnez-vous ?',
-      'faq.a1': 'Des PME et ETI en Algérie, au Maghreb et en Europe francophone, tous secteurs confondus, dès lors qu’il y a un vrai process à automatiser ou à outiller.',
-      'faq.q2': 'Quel est un engagement type ?',
-      'faq.a2': 'Ça commence toujours par un échange gratuit de 30 minutes pour cadrer le besoin, puis un audit court avant de démarrer un projet. Durée et livrables varient selon le périmètre, définis ensemble dès le départ.',
-      'faq.q3': 'Combien coûte un projet ?',
-      'faq.a3': 'Ça dépend entièrement du périmètre. Pas de catalogue de prix figé à ce stade : on en discute lors de l’échange initial, une fois le besoin clair.',
-      'faq.q4': 'Où sont stockées les données ?',
-      'faq.a4': 'La souveraineté des données est prise au sérieux, en conformité avec la loi 25-11 algérienne sur la protection des données personnelles. L’hébergement est discuté selon le projet et vos contraintes.',
-      'faq.q5': 'Comment se déroule un projet du début à la fin ?',
-      'faq.a5': 'Diagnostic, design, build, measure : on avance par itérations courtes, avec des points réguliers, plutôt qu’une livraison unique à la fin.',
-      'faq.q6': 'Travaillez-vous avec des entreprises hors d’Algérie ?',
-      'faq.a6': 'Oui, notamment au Maghreb et en Europe francophone. Les échanges et le travail se font à distance, avec des déplacements possibles selon le projet.',
+    'wh.label': 'Why Ily Consulting',
+    'wh.title': 'A business-first approach',
+    'wh.1': 'Understand the problem before choosing the tool.',
+    'wh.2': 'Measure performance and use the data you already have.',
+    'wh.3': 'Automate only when it brings real value.',
+    'wh.4.tag': 'Measurement',
+    'wh.4': 'Define indicators to evaluate the result.',
 
-      'cta.title': 'Prêt à passer de la théorie aux résultats ?',
-      'cta.subtitle': 'Discutons de votre projet lors d’un échange gratuit de 30 minutes.',
-      'cta.form.name': 'Nom',
-      'cta.form.email': 'Email',
-      'cta.form.company': 'Entreprise',
-      'cta.form.message': 'Message',
-      'cta.form.submit': 'Envoyer ma demande',
-      'cta.form.note': 'Réponse sous 24h ouvrées.',
-      'cta.whatsapp': 'Écrire sur WhatsApp',
-      'cta.calendar': 'Prendre RDV directement',
-      'cta.soon': 'Bientôt disponible',
+    'ab.label': 'About',
+    'ab.t1': 'I don’t start with the technology.',
+    'ab.t2': 'I start with your business problem.',
+    'ab.p1': 'Sales experience taught me one thing: a technology has no value if it doesn’t solve a concrete problem.',
+    'ab.p2': 'Ily Consulting combines an understanding of business processes, data and artificial intelligence to build solutions that are genuinely useful to companies.',
+    'ab.cta': 'More about my background',
+    'ab.bio1': 'As a field sales rep in the pharmaceutical sector, I built my first AI tools to solve my own problems: portfolio tracking, reporting, order entry.',
+    'ab.bio2': 'That user-side, on-the-ground experience guides every Ily Consulting project: start from the real work, not from the tool.',
+    'ab.role': 'Founder, Ily Consulting',
+    'ab.loc': 'Oran, Algeria',
 
-      'footer.tagline': 'L’IA appliquée aux vrais problèmes de votre entreprise.',
-      'footer.nav': 'Navigation',
-      'footer.contact': 'Contact',
-      'footer.resources': 'Ressources',
-      'footer.blogSoon': 'Blog — à venir',
-      'footer.legal': 'Fondé par Sekouane Islam Imad eddine — Oran, Algérie — © 2026 Ily Consulting IA'
-    },
-    en: {
-      'nav.services': 'Services',
-      'nav.methode': 'Method',
-      'nav.apropos': 'About',
-      'nav.contact': 'Contact',
-      'nav.faq': 'FAQ',
-      'nav.cta': "Let's discuss your project",
+    'fq.label': 'FAQ',
+    'fq.title': 'Your questions, our answers',
+    'fq.q1': 'How long does an AI assessment take?',
+    'fq.a1': 'It depends on the size of the company and the number of processes to analyse. It always starts with a 30-minute call, followed by an observation phase of your processes, and ends with a prioritised roadmap. The exact duration is set together during the first call.',
+    'fq.q2': 'Do you only work with SMEs?',
+    'fq.a2': 'SMEs are our core focus, but the method applies to any organisation with repetitive processes to analyse: practices, independent professionals, or the sales and admin teams of larger companies.',
+    'fq.q3': 'Which tools do you use?',
+    'fq.a3': 'The ones that fit the need: AI models (Claude, GPT), automation tools (n8n), Power BI for data, and your existing tools (Google Workspace, Excel, CRM, WhatsApp). The tool is chosen after the assessment, never before.',
+    'fq.q4': 'How does a project run?',
+    'fq.a4': 'In five steps: understand, identify, prioritise, build, measure. We move in short iterations with regular check-ins, so you see the solution evolve instead of waiting for a final delivery.',
+    'fq.q5': 'Is training included?',
+    'fq.a5': 'Yes. Every delivered solution comes with hands-on onboarding for the teams who use it. A solution nobody uses has no value, so training is part of the project.',
+    'fq.q6': 'Can AI be integrated into my current tools?',
+    'fq.a6': 'In the vast majority of cases, yes. The goal is to plug into your existing tools (messaging, spreadsheets, CRM, business software) rather than replace them. The assessment checks this precisely before any development.',
 
-      'hero.eyebrow': 'AI Consultant — Oran, Algeria',
-      'hero.title': 'AI applied to your business’s real problems',
-      'hero.subtitle': 'Strategy, development and training. For SMEs and mid-sized companies in Algeria, the Maghreb and Europe.',
-      'hero.ctaPrimary': 'Book a free consultation',
-      'hero.ctaSecondary': 'Explore our services',
+    'ct.title': 'Let’s talk about your project.',
+    'ct.lead': '30 minutes. No commitment. I help you identify the automation opportunities in your company.',
+    'ct.wa': 'Message directly',
+    'ct.soon': 'Soon',
+    'ct.f.name': 'Name',
+    'ct.f.email': 'Work email',
+    'ct.f.company': 'Company',
+    'ct.f.message': 'Which tasks take up most of your time today?',
+    'ct.f.note': 'Reply within 24 business hours. Your information is never shared.',
 
-      'trust.text': 'Based in Oran, supporting businesses across Algeria, the Maghreb and Europe',
-      'trust.placeholder': 'Trusted clients coming soon',
-
-      'services.eyebrow': 'What we do',
-      'services.title': 'Our services',
-      'services.lead': 'Two ways to work together, depending on where you stand with AI.',
-      'services.conseil.title': 'Consulting',
-      'services.conseil.card1.title': 'AI audit & diagnosis',
-      'services.conseil.card1.desc': 'Analysis of your digital maturity and identification of concrete automation opportunities.',
-      'services.conseil.card2.title': 'Custom development',
-      'services.conseil.card2.desc': 'AI agents and automations built for your real processes, not generic templates.',
-      'services.conseil.card3.title': 'Strategic support',
-      'services.conseil.card3.desc': 'A 3-6 month roadmap and support through change management.',
-      'services.conseil.card4.title': 'Data & Analytics',
-      'services.conseil.card4.desc': 'AI dashboards and decision-making reporting to run your business on reliable data.',
-      'services.formation.title': 'Training',
-      'services.formation.card1.title': 'Introduction',
-      'services.formation.card1.desc': 'Your teams discover generative AI (Claude, ChatGPT) and its first concrete uses.',
-      'services.formation.card2.title': 'Advanced',
-      'services.formation.card2.desc': 'Expert prompting and automated workflows for users already comfortable with AI.',
-      'services.formation.card3.title': 'Executives',
-      'services.formation.card3.desc': 'Understand the strategic stakes of AI for decision-making, in a dedicated session.',
-
-      'methode.eyebrow': 'How we work',
-      'methode.title': 'Our method',
-      'methode.step1.title': 'Diagnose',
-      'methode.step1.desc': 'We understand your business and its real pain points before talking solutions.',
-      'methode.step2.title': 'Design',
-      'methode.step2.desc': 'We design an AI solution tailored to your context.',
-      'methode.step3.title': 'Build',
-      'methode.step3.desc': 'We develop, test and iterate with you at every step.',
-      'methode.step4.title': 'Measure',
-      'methode.step4.desc': 'We measure results, adjust, and scale what works.',
-
-      'apropos.eyebrow': 'Who I am',
-      'apropos.title': 'About Ily Consulting IA',
-      'apropos.p1': 'Founded by Sekouane Islam Imad eddine, Ily Consulting IA supports Algerian and European businesses in their applied AI projects.',
-      'apropos.vision': '"Making AI accessible and useful for businesses that want measurable results, without jargon or empty promises."',
-      'apropos.value1': 'Pragmatism',
-      'apropos.value2': 'Transparency',
-      'apropos.value3': 'Measurable results',
-      'apropos.location': 'Based in Oran, I work with clients across the Maghreb and Europe.',
-
-      'faq.eyebrow': 'Frequently asked questions',
-      'faq.title': 'FAQ',
-      'faq.q1': 'What kind of businesses do you work with?',
-      'faq.a1': 'SMEs and mid-sized companies in Algeria, the Maghreb and French-speaking Europe, any sector, as long as there’s a real process to automate or support.',
-      'faq.q2': 'What does a typical engagement look like?',
-      'faq.a2': 'It always starts with a free 30-minute call to scope the need, then a short audit before starting a project. Duration and deliverables vary by scope, defined together from the start.',
-      'faq.q3': 'How much does a project cost?',
-      'faq.a3': 'It fully depends on scope. No fixed price list at this stage: we discuss it during the initial call, once the need is clear.',
-      'faq.q4': 'Where is data stored?',
-      'faq.a4': 'Data sovereignty is taken seriously, in line with Algeria’s 25-11 personal data protection law. Hosting is discussed per project and your constraints.',
-      'faq.q5': 'How does a project run from start to finish?',
-      'faq.a5': 'Diagnose, design, build, measure: we move in short iterations, with regular checkpoints, rather than one single delivery at the end.',
-      'faq.q6': 'Do you work with companies outside Algeria?',
-      'faq.a6': 'Yes, notably in the Maghreb and French-speaking Europe. Work happens remotely, with travel possible depending on the project.',
-
-      'cta.title': 'Ready to move from theory to results?',
-      'cta.subtitle': 'Let’s discuss your project during a free 30-minute call.',
-      'cta.form.name': 'Name',
-      'cta.form.email': 'Email',
-      'cta.form.company': 'Company',
-      'cta.form.message': 'Message',
-      'cta.form.submit': 'Send my request',
-      'cta.form.note': 'Response within 24 business hours.',
-      'cta.whatsapp': 'Message on WhatsApp',
-      'cta.calendar': 'Book directly',
-      'cta.soon': 'Coming soon',
-
-      'footer.tagline': 'AI applied to your business’s real problems.',
-      'footer.nav': 'Navigation',
-      'footer.contact': 'Contact',
-      'footer.resources': 'Resources',
-      'footer.blogSoon': 'Blog — coming soon',
-      'footer.legal': 'Founded by Sekouane Islam Imad eddine — Oran, Algeria — © 2026 Ily Consulting IA'
-    }
+    'ft.desc': 'AI assessment, automation and data analytics for SMEs. We start with your problem, not with the tool.',
+    'ft.loc': 'Oran, Algeria',
+    'ft.copy': '© 2026 Ily Consulting. All rights reserved.',
+    'ft.founder': 'Founded by Sekouane Islam Imad eddine'
   };
 
-  var STORAGE_KEY = 'ily-lang';
+  var i18nNodes = [];
 
-  function getLang() {
-    return localStorage.getItem(STORAGE_KEY) || 'fr';
+  function captureFrench() {
+    i18nNodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+    i18nNodes.forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (!(key in fr)) fr[key] = el.textContent;
+    });
   }
 
-  function splitIntoWords(el, text) {
-    if (!el) return;
-    el.innerHTML = '';
-    var words = text.split(' ');
-    words.forEach(function (word, i) {
-      var span = document.createElement('span');
-      span.className = 'word';
-      span.style.animationDelay = (0.15 + i * 0.06) + 's';
-      span.textContent = word;
-      el.appendChild(span);
-      if (i < words.length - 1) {
-        el.appendChild(document.createTextNode(' '));
-      }
-    });
+  function getLang() {
+    try { return localStorage.getItem(STORAGE_KEY) || 'fr'; } catch (e) { return 'fr'; }
   }
 
   function applyLang(lang) {
-    var dict = translations[lang] || translations.fr;
-    document.documentElement.lang = lang;
-
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var dict = lang === 'en' ? en : fr;
+    i18nNodes.forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      if (dict[key]) el.textContent = dict[key];
+      var text = dict[key] != null ? dict[key] : fr[key];
+      if (text != null && el.textContent !== text) el.textContent = text;
     });
-
-    document.querySelectorAll('[data-i18n-split]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-split');
-      var text = dict[key];
-      if (text) splitIntoWords(el, text);
-    });
-
+    document.documentElement.lang = lang;
     document.querySelectorAll('.lang-option').forEach(function (el) {
       el.classList.toggle('is-active', el.getAttribute('data-lang') === lang);
     });
-
-    localStorage.setItem(STORAGE_KEY, lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* stockage indisponible : on ignore */ }
+    // Les réponses FAQ ouvertes doivent se réajuster à la nouvelle hauteur du texte
+    document.querySelectorAll('.faq-item.is-open .faq-answer').forEach(function (a) {
+      a.style.maxHeight = a.scrollHeight + 'px';
+    });
   }
 
-  /* ===== Header scroll state ===== */
-  function initHeaderScroll() {
+  function initLangToggle() {
+    var toggle = document.getElementById('lang-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function () {
+      applyLang(getLang() === 'fr' ? 'en' : 'fr');
+    });
+  }
+
+  /* ===== Header : état scrollé + lien actif ===== */
+  function initHeader() {
     var header = document.getElementById('site-header');
     if (!header) return;
-    function onScroll() {
-      header.classList.toggle('is-scrolled', window.scrollY > 12);
-    }
+    function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    var links = Array.prototype.slice.call(document.querySelectorAll('.main-nav > a[href^="#"]'));
+    var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+    if (!('IntersectionObserver' in window) || !sections.length) return;
+
+    var current = null;
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) current = entry.target.id;
+      });
+      links.forEach(function (a) {
+        a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ===== Mobile nav ===== */
+  /* ===== Navigation mobile ===== */
   function initMobileNav() {
     var burger = document.getElementById('nav-burger');
     var nav = document.getElementById('main-nav');
     if (!burger || !nav) return;
-    burger.addEventListener('click', function () {
-      var isOpen = nav.classList.toggle('is-open');
-      burger.classList.toggle('is-open', isOpen);
-      burger.setAttribute('aria-expanded', String(isOpen));
-    });
+
+    function setOpen(open) {
+      nav.classList.toggle('is-open', open);
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
     nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        burger.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); burger.focus(); }
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', function (e) {
+      if (e.matches) setOpen(false);
     });
   }
 
-  /* ===== Reveal on scroll ===== */
+  /* ===== Reveal au scroll (avec cascade sur les grilles .stagger) ===== */
   function initReveal() {
-    var els = document.querySelectorAll('.reveal, .heading-split');
+    var els = document.querySelectorAll('.reveal');
+    document.querySelectorAll('.stagger').forEach(function (grid) {
+      Array.prototype.forEach.call(grid.children, function (child, i) {
+        child.style.setProperty('--i', i);
+      });
+    });
     if (!('IntersectionObserver' in window)) {
       els.forEach(function (el) { el.classList.add('is-visible'); });
       return;
@@ -275,109 +271,109 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
-
-    // Set --stagger-i custom property on grid children for .reveal elements
-    document.querySelectorAll('.service-cards .reveal, .service-cards-3 .reveal, .methode-steps .reveal').forEach(function (el) {
-      var index = Array.from(el.parentNode.children).indexOf(el);
-      el.style.setProperty('--stagger-i', index);
-    });
-
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ===== FAQ accordion ===== */
+  /* ===== FAQ accordéon ===== */
   function initFaq() {
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function (item) {
       var question = item.querySelector('.faq-question');
       var answer = item.querySelector('.faq-answer');
+      if (!question || !answer) return;
       question.addEventListener('click', function () {
-        var isOpen = item.classList.contains('is-open');
-        document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
-          if (openItem !== item) {
-            openItem.classList.remove('is-open');
-            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            openItem.querySelector('.faq-answer').style.maxHeight = null;
-          }
+        var willOpen = !item.classList.contains('is-open');
+        items.forEach(function (other) {
+          if (other === item) return;
+          other.classList.remove('is-open');
+          other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          other.querySelector('.faq-answer').style.maxHeight = null;
         });
-        item.classList.toggle('is-open', !isOpen);
-        question.setAttribute('aria-expanded', String(!isOpen));
-        answer.style.maxHeight = !isOpen ? answer.scrollHeight + 'px' : null;
+        item.classList.toggle('is-open', willOpen);
+        question.setAttribute('aria-expanded', String(willOpen));
+        answer.style.maxHeight = willOpen ? answer.scrollHeight + 'px' : null;
       });
     });
   }
 
-  /* ===== Magnetic buttons ===== */
-  function initMagnetic() {
-    if (window.matchMedia('(pointer: coarse)').matches) return;
-    document.querySelectorAll('.magnetic').forEach(function (btn) {
-      btn.addEventListener('mousemove', function (e) {
-        var rect = btn.getBoundingClientRect();
-        var x = e.clientX - rect.left - rect.width / 2;
-        var y = e.clientY - rect.top - rect.height / 2;
-        btn.style.setProperty('--magnet-x', (x * 0.12) + 'px');
-        btn.style.setProperty('--magnet-y', (y * 0.25) + 'px');
-      });
-      btn.addEventListener('mouseleave', function () {
-        btn.style.removeProperty('--magnet-x');
-        btn.style.removeProperty('--magnet-y');
-      });
-    });
-  }
-
-  /* ===== Lang toggle ===== */
-  function initLangToggle() {
-    var toggle = document.getElementById('lang-toggle');
-    if (!toggle) return;
+  /* ===== À propos : parcours dépliable ===== */
+  function initBio() {
+    var toggle = document.getElementById('bio-toggle');
+    var more = document.getElementById('bio-more');
+    if (!toggle || !more) return;
     toggle.addEventListener('click', function () {
-      var next = getLang() === 'fr' ? 'en' : 'fr';
-      applyLang(next);
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      more.hidden = open;
     });
   }
 
-  /* ===== Smooth scroll (Lenis) + parallax discret sur le hero ===== */
-  function initSmoothScroll() {
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || typeof Lenis === 'undefined') return;
+  /* ===== Formulaire : envoi Formspree sans rechargement, avec retour visuel ===== */
+  function initForm() {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    if (!form || !status) return;
 
-    var lenis = new Lenis({
-      duration: 1.1,
-      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    var msgs = {
+      fr: {
+        invalid: 'Merci de remplir les champs obligatoires avec une adresse email valide.',
+        sending: 'Envoi en cours…',
+        ok: 'Merci, votre demande est bien envoyée. Réponse sous 24h ouvrées.',
+        error: 'L’envoi a échoué. Écrivez-nous directement à islem@ily-consultingia.com.'
+      },
+      en: {
+        invalid: 'Please fill in the required fields with a valid email address.',
+        sending: 'Sending…',
+        ok: 'Thank you, your request has been sent. Reply within 24 business hours.',
+        error: 'Sending failed. Email us directly at islem@ily-consultingia.com.'
+      }
+    };
+    function t(key) { return (msgs[getLang()] || msgs.fr)[key]; }
+    function setStatus(text, kind) {
+      status.textContent = text;
+      status.className = 'form-status' + (kind ? ' is-' + kind : '');
     }
-    requestAnimationFrame(raf);
 
-    var heroVisual = document.querySelector('.hero-visual');
-    lenis.on('scroll', function (e) {
-      if (!heroVisual) return;
-      var offset = Math.min(e.scroll * 0.15, 120);
-      heroVisual.style.transform = 'translateY(' + offset + 'px)';
-    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valid = true;
+      form.querySelectorAll('[required]').forEach(function (field) {
+        var ok = field.value.trim() !== '' && (field.type !== 'email' || field.checkValidity());
+        field.setAttribute('aria-invalid', String(!ok));
+        if (!ok) valid = false;
+      });
+      if (!valid) { setStatus(t('invalid'), 'error'); return; }
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        var id = link.getAttribute('href');
-        if (id.length <= 1) return;
-        var target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        lenis.scrollTo(target, { offset: -70 });
+      var button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      setStatus(t('sending'), '');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        form.reset();
+        setStatus(t('ok'), 'ok');
+      }).catch(function () {
+        setStatus(t('error'), 'error');
+      }).finally(function () {
+        button.disabled = false;
       });
     });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    captureFrench();
     applyLang(getLang());
-    initHeaderScroll();
+    initLangToggle();
+    initHeader();
     initMobileNav();
     initReveal();
     initFaq();
-    initMagnetic();
-    initLangToggle();
-    initSmoothScroll();
+    initBio();
+    initForm();
   });
 })();
